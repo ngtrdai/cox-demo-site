@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bảy chỉ số sản phẩm mà đội ngũ nào cũng nên theo dõi — Nimbus Analytics</title>
+<meta name="description" content="Không phải chỉ số nào cũng đáng theo dõi. Đây là bộ chỉ số tối thiểu giúp bạn hiểu sức khỏe sản phẩm.">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <span class="brand-mark"></span>
+      Nimbus Analytics
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#features">Tính năng</a></li>
+      <li><a href="index.html#how">Cách hoạt động</a></li>
+      <li><a href="index.html#pricing">Bảng giá</a></li>
+      <li><a href="blog.html">Blog</a></li>
+    </ul>
+    <a class="btn btn-primary" href="index.html#pricing">Dùng thử miễn phí</a>
+  </div>
+</header>
+
+<main class="container layout">
+
+  <article class="article">
+    <div class="post-meta"><a href="blog.html">Blog</a> · <span class="tag">Phân tích</span> 06/08/2026 · 7 phút đọc</div>
+    <h1>Bảy chỉ số sản phẩm mà đội ngũ nào cũng nên theo dõi</h1>
+
+    <div class="byline">
+      <span class="avatar"></span>
+      <span>Minh Trần — Head of Product Analytics</span>
+    </div>
+
+    <div class="article-hero"></div>
+
+    <p style="margin-top: 28px;">
+      Phần lớn đội ngũ sản phẩm không thiếu dữ liệu, họ thiếu sự tập trung. Một dashboard
+      với bốn mươi biểu đồ thường ít hữu ích hơn một dashboard với bảy con số mà ai cũng
+      hiểu ý nghĩa. Bài viết này liệt kê bộ chỉ số tối thiểu chúng tôi khuyên dùng cho
+      hầu hết sản phẩm SaaS.
+    </p>
+
+    <blockquote>
+      Nếu một chỉ số thay đổi mà không ai biết phải làm gì tiếp theo, đó không phải chỉ số,
+      đó chỉ là một con số.
+    </blockquote>
+
+    <h2>1. Người dùng hoạt động</h2>
+    <p>
+      DAU, WAU và MAU là điểm khởi đầu, nhưng định nghĩa "hoạt động" mới là phần quan trọng.
+      Mở ứng dụng không đồng nghĩa với việc nhận được giá trị. Hãy chọn một hành động cốt lõi —
+      tạo báo cáo, gửi tin nhắn, hoàn tất đơn hàng — và đo lường theo hành động đó.
+    </p>
+
+    <h2>2. Tỷ lệ kích hoạt</h2>
+    <p>
+      Bao nhiêu phần trăm người đăng ký thực sự đạt tới khoảnh khắc "aha" trong bảy ngày đầu?
+      Đây thường là đòn bẩy tăng trưởng rẻ nhất, vì bạn đã trả tiền để có được những người dùng này rồi.
+    </p>
+    <ul>
+      <li>Xác định một hành động đại diện cho giá trị cốt lõi.</li>
+      <li>Đặt khung thời gian rõ ràng, ví dụ 7 hoặc 14 ngày.</li>
+      <li>Theo dõi theo cohort đăng ký, không phải theo tổng thể.</li>
+    </ul>
+
+    <h2>3. Tỷ lệ giữ chân theo cohort</h2>
+    <p>
+      Retention là chỉ số trung thực nhất về việc sản phẩm có thực sự hữu ích hay không.
+      Một đường cong retention phẳng dần sau tuần thứ tư là dấu hiệu tốt; đường cong tiếp tục
+      đi xuống nghĩa là bạn đang đổ nước vào một chiếc xô thủng.
+    </p>
+
+    <figure>
+      <div style="height: 240px; border: 1px solid var(--border); border-radius: 12px; background: repeating-linear-gradient(45deg, #eef1fa 0 12px, #f7f8fc 12px 24px);"></div>
+      <figcaption>Biểu đồ retention dạng tam giác theo tuần đăng ký.</figcaption>
+    </figure>
+
+    <h2>4. Doanh thu định kỳ và tăng trưởng thuần</h2>
+    <p>
+      MRR cho biết quy mô, nhưng Net Revenue Retention cho biết chất lượng. NRR trên 100%
+      nghĩa là nhóm khách hàng hiện tại tự tăng chi tiêu nhanh hơn tốc độ rời bỏ — nền tảng
+      cho tăng trưởng bền vững.
+    </p>
+
+    <h2>5. Thời gian đến giá trị đầu tiên</h2>
+    <p>
+      Càng rút ngắn khoảng thời gian từ lúc đăng ký đến lúc người dùng nhận được kết quả
+      đầu tiên, tỷ lệ chuyển đổi trả phí càng cao. Hãy đo bằng phút, không phải bằng ngày.
+    </p>
+
+    <h3>Một ví dụ đo lường</h3>
+    <pre><code>nimbus.track("report_created", {
+  workspace_id: "ws_8412",
+  template: "retention",
+  seconds_since_signup: 372
+});</code></pre>
+
+    <h2>6. Tỷ lệ rời bỏ theo phân khúc</h2>
+    <p>
+      Churn tổng thể thường che giấu vấn đề. Khi tách theo gói dịch vụ, quy mô công ty hoặc
+      kênh thu hút, bạn sẽ thấy có những phân khúc rời bỏ gấp ba lần phần còn lại — và đó
+      chính là nơi cần can thiệp.
+    </p>
+
+    <h2>7. Chất lượng trải nghiệm kỹ thuật</h2>
+    <p>
+      Thời gian tải trang, tỷ lệ lỗi và độ trễ API không phải chỉ số của riêng đội kỹ thuật.
+      Chúng ảnh hưởng trực tiếp đến chuyển đổi. Trong dữ liệu nội bộ của chúng tôi, mỗi 400ms
+      chậm hơn ở bước thanh toán tương ứng với khoảng 2,1% đơn hàng bị bỏ dở.
+    </p>
+
+    <h2>Bắt đầu từ đâu</h2>
+    <ol>
+      <li>Chọn tối đa bảy chỉ số và viết định nghĩa của từng chỉ số ra văn bản.</li>
+      <li>Thống nhất định nghĩa với đội kỹ thuật, marketing và ban lãnh đạo.</li>
+      <li>Đặt lịch xem lại hàng tuần, gắn mỗi chỉ số với một người chịu trách nhiệm.</li>
+      <li>Chỉ thêm chỉ số mới khi có câu hỏi cụ thể cần trả lời.</li>
+    </ol>
+
+    <p>
+      Bộ chỉ số tốt không phải bộ đầy đủ nhất, mà là bộ khiến cả công ty cùng nhìn về một
+      hướng. Nếu bạn muốn bắt đầu nhanh, Nimbus có sẵn mẫu dashboard chứa đúng bảy chỉ số này.
+    </p>
+
+    <div class="cta" style="margin-top: 44px;">
+      <h2>Dựng dashboard đầu tiên trong 15 phút</h2>
+      <p>Miễn phí cho tới 50.000 sự kiện mỗi tháng.</p>
+      <a class="btn btn-lg" href="index.html#pricing">Bắt đầu ngay</a>
+    </div>
+  </article>
+
+  <aside class="sidebar">
+    <div class="widget">
+      <h4>Mục lục</h4>
+      <ul>
+        <li>Người dùng hoạt động</li>
+        <li>Tỷ lệ kích hoạt</li>
+        <li>Retention theo cohort</li>
+        <li>Doanh thu định kỳ</li>
+        <li>Thời gian đến giá trị</li>
+        <li>Tỷ lệ rời bỏ</li>
+        <li>Chất lượng kỹ thuật</li>
+      </ul>
+    </div>
+
+    <div class="widget">
+      <h4>Bài viết liên quan</h4>
+      <ul>
+        <li><a href="article.html">Cohort retention: đọc biểu đồ tam giác đúng cách</a></li>
+        <li><a href="article.html">Tối ưu phễu đăng ký: tăng 34% chuyển đổi</a></li>
+        <li><a href="article.html">Thiết kế schema sự kiện bền vững</a></li>
+      </ul>
+    </div>
+
+    <div class="widget">
+      <h4>Bản tin</h4>
+      <p style="color: var(--muted); font-size: 14px; margin: 0 0 12px;">
+        Mỗi hai tuần một email về phân tích sản phẩm. Không spam.
+      </p>
+      <a class="btn btn-primary" href="#" style="display: block; text-align: center;">Đăng ký</a>
+    </div>
+  </aside>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="index.html"><span class="brand-mark"></span> Nimbus Analytics</a>
+        <p style="color: var(--muted); margin-top: 12px; max-width: 320px;">
+          Nền tảng phân tích sản phẩm dành cho đội ngũ muốn ra quyết định dựa trên dữ liệu.
+        </p>
+      </div>
+      <div>
+        <h5>Sản phẩm</h5>
+        <ul>
+          <li><a href="index.html#features">Tính năng</a></li>
+          <li><a href="index.html#pricing">Bảng giá</a></li>
+          <li><a href="#">Tích hợp</a></li>
+          <li><a href="#">Thay đổi phiên bản</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Tài nguyên</h5>
+        <ul>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="#">Tài liệu</a></li>
+          <li><a href="#">Hướng dẫn</a></li>
+          <li><a href="#">Trạng thái hệ thống</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Công ty</h5>
+        <ul>
+          <li><a href="#">Giới thiệu</a></li>
+          <li><a href="#">Tuyển dụng</a></li>
+          <li><a href="#">Liên hệ</a></li>
+          <li><a href="#">Bảo mật</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Nimbus Analytics. Website demo, nội dung chỉ mang tính minh họa.</span>
+      <span>Điều khoản · Quyền riêng tư · Cookie</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
